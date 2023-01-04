@@ -1,4 +1,4 @@
-package com.synchrony.user.onboarding.Config;
+package com.synchrony.user.onboarding.config;
 
 /**
  * @author NikhilLagishetty
