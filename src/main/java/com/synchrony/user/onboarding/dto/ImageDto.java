@@ -1,5 +1,6 @@
 package com.synchrony.user.onboarding.dto;
 
+
 /**
  * @author NikhilLagishetty
  * @project user.boarding
@@ -10,18 +11,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class UserDto {
+@AllArgsConstructor@NoArgsConstructor
+public class ImageDto {
 
-    private String userName;
+    private String imageId;
 
-    private String password;
-
-    private List<ImageDto> images = new ArrayList<>();
-
+    private String imageName;
 }

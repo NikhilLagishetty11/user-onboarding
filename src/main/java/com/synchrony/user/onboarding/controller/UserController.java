@@ -15,10 +15,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
 
@@ -56,6 +53,12 @@ public class UserController {
         log.info("Login user request received. user name : {}", user.getUserName());
         userService.login(user);
         return new ResponseEntity<>(new CommonCreateResponse("User Successfully logged", user.getUserName()), HttpStatus.CREATED);
+    }
+
+    @GetMapping("/userdetails/{userName}")
+    public UserDto userDetailsByUserName(@PathVariable String userName) throws Exception {
+        log.info("Get user details by user name request received. user name : {}", userName);
+        return userService.getUserDetailsByUserName(userName);
     }
 
 

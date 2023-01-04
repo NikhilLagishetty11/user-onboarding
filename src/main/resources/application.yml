@@ -27,5 +27,10 @@ spring:
   h2:
     console:
       enabled: true
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9093
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
 

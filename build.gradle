@@ -31,6 +31,9 @@ dependencies {
 	implementation("io.springfox:springfox-boot-starter:3.0.0")
 	compileOnly("io.springfox:springfox-swagger-ui:3.0.0")
 
+	//Kafka Dependencies
+	implementation 'org.springframework.kafka:spring-kafka'
+
 }
 
 tasks.named('test') {
