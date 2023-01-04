@@ -34,7 +34,7 @@ public class SynchronyUserOnboardingApplication {
 
 		log.info("********************************************************************************");
 		log.info("*                                                                              *");
-		log.info("*                      User Boarding Service Started Successfully (v :{})   *",VERSION);
+		log.info("*                 User Boarding Service Started Successfully (v :{})        *",VERSION);
 		log.info("*                                                                              *");
 		log.info("********************************************************************************");
 

@@ -12,11 +12,13 @@ import com.synchrony.user.onboarding.repo.UserRepository;
 import com.synchrony.user.onboarding.response.CommonCreateResponse;
 import com.synchrony.user.onboarding.service.UserService;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Objects;
 
 @Log4j2
@@ -36,6 +38,9 @@ public class UserController {
     }
 
 
+    /**
+     *This Api is to register the user. It takes username and password in a request body
+     */
     @PostMapping("/register")
     public ResponseEntity<CommonCreateResponse> register(@RequestBody UserDto user) throws Exception {
         log.info("Register user request received. user name : {}", user.getUserName());
@@ -48,6 +53,10 @@ public class UserController {
         }
     }
 
+
+    /**
+     * This api is used to login.
+     */
     @PostMapping("/login")
     public ResponseEntity<CommonCreateResponse> login(@RequestBody UserDto user) throws Exception {
         log.info("Login user request received. user name : {}", user.getUserName());
@@ -55,8 +64,22 @@ public class UserController {
         return new ResponseEntity<>(new CommonCreateResponse("User Successfully logged", user.getUserName()), HttpStatus.CREATED);
     }
 
+
+    /**
+     * This Api returns the All users information
+     */
+    @GetMapping("/userdetails")
+    public List<UserDto> getAllUsers() throws Exception {
+        log.info("Get All user details request received");
+        return userService.getAllUsers();
+    }
+
+
+    /**
+     * This Api returns the user details based on userName
+     */
     @GetMapping("/userdetails/{userName}")
-    public UserDto userDetailsByUserName(@PathVariable String userName) throws Exception {
+    public UserDto getUserDetailsByUserName(@PathVariable String userName) throws Exception {
         log.info("Get user details by user name request received. user name : {}", userName);
         return userService.getUserDetailsByUserName(userName);
     }

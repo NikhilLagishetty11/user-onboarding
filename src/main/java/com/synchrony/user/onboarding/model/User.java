@@ -6,10 +6,10 @@ package com.synchrony.user.onboarding.model;
  * @created-on 03/02/2023
  */
 
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,12 +20,21 @@ import java.util.List;
 @AllArgsConstructor
 public class User {
 
+    /**
+     * user id (Unique)
+     */
     @Id
     @GeneratedValue
     private Long id;
 
+    /**
+     *  User name
+     */
     private String userName;
 
+    /**
+     * Password
+     */
     private String password;
 
     @Transient

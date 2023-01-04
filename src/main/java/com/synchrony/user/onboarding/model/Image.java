@@ -18,8 +18,14 @@ import lombok.NoArgsConstructor;
 public class Image {
 
 
+    /**
+     * Image Id (Unique)
+     */
     private String imageId;
 
+    /**
+     * Name of the image
+     */
     private String imageName;
 
 
