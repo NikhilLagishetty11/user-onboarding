@@ -32,3 +32,12 @@ Wait for gradle to download all the dependencies. Once it is done run the projec
 ```bash
   http://localhost:9091/onboarding-api/swagger-ui/index.html#
 ```
+
+## Access H2 Database
+
+```bash
+  http://localhost:9091/onboarding-api/h2-console/
+
+  Username : sa
+  Password : password
+```
